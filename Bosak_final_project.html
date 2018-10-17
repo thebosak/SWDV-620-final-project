@@ -8,44 +8,54 @@
 <html>
     <head>
         <title>Bosak Agricola Scorer</title>
+        <link href="Bosak_CSS_final_project.css" rel="stylesheet"/>
         <script type = "text/javascript" src="calculator.js"></script>
     </head>
 <body>
+    <div class="input_items">
     <h1 align="center">Agricola Scorer</h1>
     <form id="form" align="center">
         <label for="fields">Fields:</label>
-        <input type="number" id="fieldInput"><br>
+        <input type="number" id="fieldInput" max="13" min="0"><br>
         <label for="pastures">Pastures:</label>
-        <input type="number" id="pastureInput"><br>
-        <label for="grain">Grain:</label>
-        <input type="number" id="grainInput"><br>
+        <input type="number" id="pastureInput" max="13" min="0"><br>
+        <label for="grain">Grain:</label max="100" min="0">
+        <input type="number" id="grainInput" max="100" min="0"><br>
         <label for="veggies">Veggies:</label>
-        <input type="number" id="veggiesInput"><br>
+        <input type="number" id="veggiesInput" max="100" min="0"><br>
         <label for="sheep">Sheep:</label>
-        <input type="number" id="sheepInput"><br>
+        <input type="number" id="sheepInput" max="100" min="0"><br>
         <label for="boar">Boar:</label>
-        <input type="number" id="boarInput"><br>
+        <input type="number" id="boarInput" max="100" min="0"><br>
         <label for="cattle">Cattle:</label>
-        <input type="number" id="cattleInput"><br>
+        <input type="number" id="cattleInput" max="100" min="0"><br>
         <label for="unused">Unused Farmyard:</label>
-        <input type="number" id="unusedInput"><br>
+        <input type="number" id="unusedInput" max="13" min="0"><br>
         <label for="fencedStables">Fenced Stables:</label>
-        <input type="number" id="fencedStablesInput"><br>
+        <input type="number" id="fencedStablesInput" max="13" min="0"><br>
         <label for="rooms">Number of rooms:</label>
-        <input type="number" id="roomsInput"><br>
+        <input type="number" id="roomsInput" max="8" min="0"><br>
         <label for="houseType">Type of house:</label>
-        <input type="text" id="houseTypeInput"><br>
+        <select id="houseTypeInput" name="houseTypeInput" class="TODO BDB">
+            <option value="Wood" selected="">Wood</option>
+            <option value="Clay">Clay</option>
+            <option value="Stone">Stone</option>
+        </select><br>
         <label for="familyMembers">Number of family members:</label>
-        <input type="number" id="familyMembersInput"><br>
+        <input type="number" id="familyMembersInput" max="4" min="2" value="2"><br>
         <label for="cardPoints">Card points:</label>
-        <input type="number" id="cardPointsInput"><br>
+        <input type="number" id="cardPointsInput" max="100" min="0"><br>
         <label for="bonusPoints">Bonus Points:</label>
-        <input type="number" id="bonusPointsInput"><br>
+        <input type="number" id="bonusPointsInput" max="100" min="0"><br>
 
         <input type="reset" class="formButton" value="Clear">
         <input type="button" onclick="calculate()" value="Calculate!">
-        <p id="finalScore"></p>
+        
+       <p id="message">Your final score is:</p><br> 
+       <p id="finalScore"></p>
+
     </form>
+    </div>
 </body>
 
 

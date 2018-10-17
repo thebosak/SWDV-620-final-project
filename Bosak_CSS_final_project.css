@@ -1,0 +1,32 @@
+/*
+  * Name: Brad Bosak
+  * Date: October 15, 2018
+  * CSS for final project
+*/
+
+body {  font-family: Arial, Helvetica, Verdana, and sans-serif; font-size: 12px;
+
+        /*background-image: url(https://images-na.ssl-images-amazon.com/images/I/9172ZauQ7CL._SY741_.jpg); opacity: 0.5;*/
+        
+}
+
+input_items {
+    display: block;
+    position: relative;
+  }
+  
+  div::after {
+    content: "";
+    background-image: url(https://images-na.ssl-images-amazon.com/images/I/9172ZauQ7CL._SY741_.jpg);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+h1 {font-size: 2em; color: blue}
+
+a {background-color: black; color: white; text-decoration: none}

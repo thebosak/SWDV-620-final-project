@@ -10,14 +10,12 @@ function calculate() {
     // }
     
     finalScoreMap = calculateScore(variableMap);
-    for (var key in finalScoreMap) {
-             alert(key + " -> " + finalScoreMap[key]);
-             finalScore += finalScoreMap[key];
-             alert("final score counter" + finalScore);
-         }
+     for (var key in finalScoreMap) {
+            finalScore += finalScoreMap[key];
+          }
 
-    alert("you're final score is " + finalScore);
-    // document.getElementById("finalScore").innerHTML = 5 + 6;
+    //alert("your final score is " + finalScore);
+    document.getElementById("finalScore").innerHTML = finalScore;
 }
 
 function getVariables() {
@@ -179,13 +177,13 @@ function calculateUnused(variableMap, scoreMap) {
 
 function calculateFencedStables(variableMap, scoreMap) {
     var fencedStableScore = variableMap["fencedStablesValue"];
-    scoreMap["fencedStableScore"] = fencedStableScore;
+    scoreMap["fencedStableScore"] = 1 * fencedStableScore;
     return scoreMap;
 }
 
 function calculateHouse(variableMap, scoreMap) { 
     if (variableMap["houseTypeValue"] === "Clay") {
-        scoreMap["houseScore"] = variableMap["roomsValue"];
+        scoreMap["houseScore"] = 1 * variableMap["roomsValue"];
     } else if (variableMap["houseTypeValue"] === "Stone") {
         scoreMap["houseScore"] = 2 * variableMap["roomsValue"];
     } else {
@@ -201,13 +199,13 @@ function calculateFamily(variableMap, scoreMap) {
 }
 
 function calculateCardPoints(variableMap, scoreMap) {
-    var cardPointScore = variableMap["cardPointsValue"];
+    var cardPointScore = 1 * variableMap["cardPointsValue"];
     scoreMap["cardPointScore"] = cardPointScore;
     return scoreMap;
 }
 
 function calculateBonusPoints(variableMap, scoreMap) {
-    var bonusPointScore = variableMap["bonusPointsValue"];
+    var bonusPointScore = 1 * variableMap["bonusPointsValue"];
     scoreMap["bonusPointScore"] = bonusPointScore;
     return scoreMap;
 }
