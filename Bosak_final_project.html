@@ -1,0 +1,54 @@
+<!--
+  * Name: Brad Bosak
+  * Date: October 15, 2018
+  * Final Project
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bosak Agricola Scorer</title>
+        <script type = "text/javascript" src="calculator.js"></script>
+    </head>
+<body>
+    <h1 align="center">Agricola Scorer</h1>
+    <form id="form" align="center">
+        <label for="fields">Fields:</label>
+        <input type="number" id="fieldInput"><br>
+        <label for="pastures">Pastures:</label>
+        <input type="number" id="pastureInput"><br>
+        <label for="grain">Grain:</label>
+        <input type="number" id="grainInput"><br>
+        <label for="veggies">Veggies:</label>
+        <input type="number" id="veggiesInput"><br>
+        <label for="sheep">Sheep:</label>
+        <input type="number" id="sheepInput"><br>
+        <label for="boar">Boar:</label>
+        <input type="number" id="boarInput"><br>
+        <label for="cattle">Cattle:</label>
+        <input type="number" id="cattleInput"><br>
+        <label for="unused">Unused Farmyard:</label>
+        <input type="number" id="unusedInput"><br>
+        <label for="fencedStables">Fenced Stables:</label>
+        <input type="number" id="fencedStablesInput"><br>
+        <label for="rooms">Number of rooms:</label>
+        <input type="number" id="roomsInput"><br>
+        <label for="houseType">Type of house:</label>
+        <input type="text" id="houseTypeInput"><br>
+        <label for="familyMembers">Number of family members:</label>
+        <input type="number" id="familyMembersInput"><br>
+        <label for="cardPoints">Card points:</label>
+        <input type="number" id="cardPointsInput"><br>
+        <label for="bonusPoints">Bonus Points:</label>
+        <input type="number" id="bonusPointsInput"><br>
+
+        <input type="reset" class="formButton" value="Clear">
+        <input type="button" onclick="calculate()" value="Calculate!">
+        <p id="finalScore"></p>
+    </form>
+</body>
+
+
+
+
+</html>
