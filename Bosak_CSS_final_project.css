@@ -4,7 +4,7 @@
   * CSS for final project
 */
 
-body {  font-family: Arial, Helvetica, Verdana, and sans-serif; font-size: 12px;
+body {  font-family: 'Lato','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
         /*background-image: url(https://images-na.ssl-images-amazon.com/images/I/9172ZauQ7CL._SY741_.jpg); opacity: 0.5;*/
         
@@ -18,7 +18,7 @@ input_items {
   div::after {
     content: "";
     background-image: url(https://images-na.ssl-images-amazon.com/images/I/9172ZauQ7CL._SY741_.jpg);
-    opacity: 0.2;
+    opacity: 0.15;
     top: 0;
     left: 0;
     bottom: 0;
@@ -29,4 +29,52 @@ input_items {
 
 h1 {font-size: 2em; color: blue}
 
-a {background-color: black; color: white; text-decoration: none}
+/*a {background-color: black; color: white; text-decoration: none}*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(22, 8, 226);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(203, 216, 240, 0.795);
+}
+
+.table {
+	display: table;
+	margin: 0 auto;
+}
+
+hr {
+    border: none;
+    height: 10px;
+    background-color: rgb(55, 241, 18);
+}
+
+.column {
+    float: left;
+    width: 25%;
+    font-size: 20px;
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
