@@ -12,7 +12,7 @@ function calculate() {
     finalScoreMap = calculateScore(variableMap);
      for (var key in finalScoreMap) {
             finalScore += finalScoreMap[key];
-          }
+        }
 
     //alert("your final score is " + finalScore);
     document.getElementById("finalScore").innerHTML = finalScore;
@@ -34,24 +34,26 @@ function getVariables() {
     variableMap["familyMembersValue"] = document.getElementById('familyMembersInput').value;
     variableMap["cardPointsValue"]    = document.getElementById('cardPointsInput').value;
     variableMap["bonusPointsValue"]   = document.getElementById('bonusPointsInput').value;
+    variableMap["beggarPointsValue"]  = document.getElementById('beggarPointsInput').value;
     return variableMap;
 }
 
 function calculateScore(variableMap) {
     var scoreMap = {};
-    var scoreMap = calculateFields(variableMap, scoreMap);
-    var scoreMap = calculatePastures(variableMap, scoreMap);
-    var scoreMap = calculateGrain(variableMap, scoreMap) ;
-    var scoreMap = calculateVeggies(variableMap, scoreMap) ;
-    var scoreMap = calculateSheep(variableMap, scoreMap) ;
-    var scoreMap = calculateBoar(variableMap, scoreMap) ;
-    var scoreMap = calculateCattle(variableMap, scoreMap) ;
-    var scoreMap = calculateUnused(variableMap, scoreMap) ;
+    var scoreMap = calculateFields(variableMap, scoreMap)        ;
+    var scoreMap = calculatePastures(variableMap, scoreMap)      ;
+    var scoreMap = calculateGrain(variableMap, scoreMap)         ;
+    var scoreMap = calculateVeggies(variableMap, scoreMap)       ;
+    var scoreMap = calculateSheep(variableMap, scoreMap)         ;
+    var scoreMap = calculateBoar(variableMap, scoreMap)          ;
+    var scoreMap = calculateCattle(variableMap, scoreMap)        ;
+    var scoreMap = calculateUnused(variableMap, scoreMap)        ;
     var scoreMap = calculateFencedStables(variableMap, scoreMap) ;
-    var scoreMap = calculateHouse(variableMap, scoreMap) ;
-    var scoreMap = calculateFamily(variableMap, scoreMap) ;
-    var scoreMap = calculateCardPoints(variableMap, scoreMap) ;
-    var scoreMap = calculateBonusPoints(variableMap, scoreMap) ;
+    var scoreMap = calculateHouse(variableMap, scoreMap)         ;
+    var scoreMap = calculateFamily(variableMap, scoreMap)        ;
+    var scoreMap = calculateCardPoints(variableMap, scoreMap)    ;
+    var scoreMap = calculateBonusPoints(variableMap, scoreMap)   ;
+    var scoreMap = calculateBeggarPoints(variableMap, scoreMap)  ;
     return scoreMap;
 }
 
@@ -207,5 +209,11 @@ function calculateCardPoints(variableMap, scoreMap) {
 function calculateBonusPoints(variableMap, scoreMap) {
     var bonusPointScore = 1 * variableMap["bonusPointsValue"];
     scoreMap["bonusPointScore"] = bonusPointScore;
+    return scoreMap;
+}
+
+function calculateBeggarPoints(variableMap, scoreMap) {
+    var beggarPointScore = -3 * variableMap["beggarPointsValue"];
+    scoreMap["beggarPointsValue"] = beggarPointScore;
     return scoreMap;
 }
