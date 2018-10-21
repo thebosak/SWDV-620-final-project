@@ -1,3 +1,9 @@
+/* 
+* Name: Brad Bosak
+* Date: October 15, 2018
+* Final Project Rules Page
+*/
+
 function calculate() {
     //initialize finalScore variable
     var finalScore = 0;
@@ -5,19 +11,17 @@ function calculate() {
     //collect variables from user input
     var variableMap = getVariables()
 
-    // for (var key in variableMap) {
-    //     alert(key + " -> " + variableMap[key]);
-    // }
-    
+    //collect the calculated scores for each part
     finalScoreMap = calculateScore(variableMap);
      for (var key in finalScoreMap) {
             finalScore += finalScoreMap[key];
         }
 
-    //alert("your final score is " + finalScore);
+    //display total final score
     document.getElementById("finalScore").innerHTML = finalScore;
 }
 
+//get the input values from the form
 function getVariables() {
     var variableMap = {};
     variableMap["fieldValue"]         = document.getElementById('fieldInput').value;
@@ -38,6 +42,7 @@ function getVariables() {
     return variableMap;
 }
 
+//function to call all individual calculation functions
 function calculateScore(variableMap) {
     var scoreMap = {};
     var scoreMap = calculateFields(variableMap, scoreMap)        ;
@@ -59,6 +64,7 @@ function calculateScore(variableMap) {
 
 //////////////////////////////////////////////////////////////////////////////
 
+//field calculation function
 function calculateFields(variableMap, scoreMap) {
     if (variableMap["fieldValue"] == 0 || variableMap["fieldValue"] == 1) {
         var fieldScore = -1;
@@ -75,6 +81,7 @@ function calculateFields(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//pasture calculation function
 function calculatePastures(variableMap, scoreMap) {
     if (variableMap["pastureValue"] == 0) {
         var pastureScore = -1;
@@ -91,6 +98,7 @@ function calculatePastures(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//grain calculation function
 function calculateGrain(variableMap, scoreMap) {
     if (variableMap["grainValue"] == 0) {
         var grainScore = -1;
@@ -107,6 +115,7 @@ function calculateGrain(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//veggies calculation function
 function calculateVeggies(variableMap, scoreMap) {
     if (variableMap["veggiesValue"] == 0) {
         var veggiesScore = -1;
@@ -123,6 +132,7 @@ function calculateVeggies(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//sheep calculation function
 function calculateSheep(variableMap, scoreMap) {
     if (variableMap["sheepValue"] == 0) {
         var sheepScore = -1;
@@ -139,6 +149,7 @@ function calculateSheep(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//boar calculation function
 function calculateBoar(variableMap, scoreMap) {
     if (variableMap["boarValue"] == 0) {
         var boarScore = -1;
@@ -155,6 +166,7 @@ function calculateBoar(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//cattle calculation function
 function calculateCattle(variableMap, scoreMap) {
     if (variableMap["cattleValue"] == 0) {
         var cattleScore = -1;
@@ -171,18 +183,22 @@ function calculateCattle(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//unused spaces calculation function
 function calculateUnused(variableMap, scoreMap) {
     var unusedScore = -(variableMap["unusedValue"]);
     scoreMap["unusedScore"] = unusedScore;
     return scoreMap;
 }
 
+
+//fenced stables calculation function
 function calculateFencedStables(variableMap, scoreMap) {
     var fencedStableScore = variableMap["fencedStablesValue"];
     scoreMap["fencedStableScore"] = 1 * fencedStableScore;
     return scoreMap;
 }
 
+//house calculation function
 function calculateHouse(variableMap, scoreMap) { 
     if (variableMap["houseTypeValue"] === "Clay") {
         scoreMap["houseScore"] = 1 * variableMap["roomsValue"];
@@ -194,6 +210,7 @@ function calculateHouse(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//family calculation function
 function calculateFamily(variableMap, scoreMap) {
     var familyScore = 3 * variableMap["familyMembersValue"];
     scoreMap["familyScore"] = familyScore;
@@ -206,12 +223,14 @@ function calculateCardPoints(variableMap, scoreMap) {
     return scoreMap;
 }
 
+//bonus points calculation function
 function calculateBonusPoints(variableMap, scoreMap) {
     var bonusPointScore = 1 * variableMap["bonusPointsValue"];
     scoreMap["bonusPointScore"] = bonusPointScore;
     return scoreMap;
 }
 
+//beggar points calculation function
 function calculateBeggarPoints(variableMap, scoreMap) {
     var beggarPointScore = -3 * variableMap["beggarPointsValue"];
     scoreMap["beggarPointsValue"] = beggarPointScore;
