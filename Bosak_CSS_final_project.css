@@ -15,7 +15,7 @@ input_items {
   div::after {
     content: "";
     background-image: url(https://images-na.ssl-images-amazon.com/images/I/9172ZauQ7CL._SY741_.jpg);
-    opacity: 0.1;
+    opacity: 0.05;
     top: 0;
     left: 0;
     bottom: 0;
